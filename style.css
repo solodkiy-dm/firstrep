@@ -3,24 +3,33 @@
   height:98vh;
 	background-image: url(https://get.pxhere.com/photo/eyewear-sunglasses-glasses-personal-protective-equipment-Transparent-material-close-up-reflection-goggles-vision-care-photography-Material-property-still-life-photography-silver-macro-photography-glass-Eye-glass-accessory-aviator-sunglass-Tints-and-shades-1522943.jpg);
   background-size: cover;
-  grid-template-rows: repeat(12, [row] 1fr);
-  grid-auto-rows: minmax(40px, auto);
-  grid-template-columns: repeat(auto-fit, 1fr);
-  grid-gap: 5px;
-  align-content: space-between;
+  grid-template-columns: repeat(3, [col] 1fr);
+  grid-template-rows: repeat(5, [row] 1fr);
+  grid-auto-rows: minmax(70px, auto);
+  grid-auto-colomns: minmax(160px, auto);
+
+  grid-gap: 20px;
+/*   align-content: start; */
 }
-.logo img {
+.logo > img {
 	display: grid;
-	width: 250px;
-	height: 130px;
-	grid-column: col 1 / col 2;
+  width: 100%;
+	min-height: 60px;
+/*   min-width: 100%; */
+  border-radius: 8px;
+
+/* 	grid-column: col 1 / col 2; */
+/*   grid-row: row 1 / row 2; */
 	margin: 10px;
 }
 .header {
-  min-height: 50px;
-  grid-column: col 2 / col 7;
+  display: grid;
+  width: 2fr;
+  min-height: 100px;
+/*   min-width: 110px; */
+  grid-column: col 2 / col 4;
   align-self: start;
-	/* background-color:red; */
+/* 	background-color:red; */
   }
 .header {
   display: flex;
@@ -30,9 +39,13 @@
 .header li {
 	display: inline;
   border: 2px solid #000;
-  margin-left: 30px;
-  border-radius:14px;
-  padding:5px;
+/*   margin-top: 6px; */
+  margin:3px;
+/*   margin-right: 5px;  */
+  margin-left:10px;
+  border-radius:11px;
+  padding:4px;
+/*   paddind-right:10px; */
   float: left;
 }
 .header a {
@@ -40,84 +53,78 @@
   text-decoration: none;
   }
 .main-form {
-  min-height: 150px;
-  min-width: 150px;
-  grid-row: row 2 / row 9;
-/* 	grid-column: col 1 / col 2; */
+  min-height: 220%;
+  min-width: 180px;
+/*   grid-row: row 2 / row 3; */
+/* 	grid-column: col 1; */
   border-radius: 5px;
   background: inherit;
   overflow: hidden;
-  margin: 30px;
+  margin-left: 20px;
   justify-items: center;
   text-align: center;
   border: 1px solid #000;
-/* 	background-color:red; */
-  }
-.footer {
-  min-height: 15px;
-  min-width: 100px;
-  grid-column: span 6;
-  grid-row: row 12;
-  align-self: center;
-stify-items: center;
-  text-align:center;
+  margin-left:20px;
 }
-.footer li {
-	/* display: inline; */
-  /* border: 2px solid #000; */
-  margin-left: 20px;
-  /* border-radius:14px; */
-  padding:5px;
-  float: left;
-  /* background-color:red; */
-  /* opacity:0.5; */
+.footer{
+grid-row: span 3;
 }
-#site-info {
-  display: block;
-  text-align: right;
-  }
+
 @media (max-width: 510px)
 {
 .grid-container {
  	display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas:"logo"
-											"main-form"
-                      "footer"
-                      "site-info";
-/*     grid-auto-rows: minmax(100px, auto); */
+  grid-template-columns: repeat( 2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:"logo img logo img"
+											"main-form header"
+                      "main-form header"
+                      "footer footer";
+  grid-auto-rows: minmax(200px, auto);
+  grid-auto-columns: minmax(400px, auto);
+    align-content: start;
 
   }
-	.logo img {
-		display: grid;
-		width: 130;
-	height: 80px;
-
-		grid-row: row 1 / row 2;
-		margin: 10px;
-
+	.logo img{
+/* 		display: grid; */
+		min-width: 100%;
+	  min-height: 80%;
 	}
   .header {
-    /* display: flex; */
-/*       margin-left: 0px; */
-			grid-row: row 2 / row 6;
-
+/*   display: grid; */
+  width: 50px;
+  height: 50px;
+/*   min-width: 110px; */
+/*   grid-column: col 2 / col 4; */
+/*   align-self: start; */
+/* 	background-color:red; */
   }
-  .main-form {
-    display: flex;
-    max-width: auto;
-    grid-row: row 7 / row 9;
-    margin-left: 10px;
-  }
-  .header li {
+   .header li {
     display:flex;
     padding:0px;
     margin:4px;
     text-align: center;
     float: none;
+/*     grid-row: row 2 / row 6; */
   }
-  #site-info {
-    grid-row: row 12 / row 13;
+/*   .header {
+    display: flex;
+    margin-top: 0px;
+  } */
+  .main-form {
+ min-height: 150px;
+/*   min-width: 100%; */
+/*   grid-row: row 2 / row 4; */
+/* 	grid-column: col 1; */
+/* 	background-color:red; */
+  }
+
+  .footer {
+    display:grid;
+    min-width:100%;
+/*     grid-column:span3; */
+/*     grid-row: row 3 / row 4; */
     text-align: center;
+    background-color:red;
   }
 }
