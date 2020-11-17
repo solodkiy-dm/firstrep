@@ -5,126 +5,116 @@
   background-size: cover;
   grid-template-columns: repeat(3, [col] 1fr);
   grid-template-rows: repeat(5, [row] 1fr);
-  grid-auto-rows: minmax(70px, auto);
-  grid-auto-colomns: minmax(160px, auto);
-
-  grid-gap: 20px;
-/*   align-content: start; */
+/*   grid-auto-rows: minmax(10px, auto); */
+/*   grid-auto-colomns: minmax(150px, auto); */
+  grid-gap: 10px;
+  align-items: start;
+  justify-items: center;
 }
-.logo > img {
-	display: grid;
-  width: 100%;
-	min-height: 60px;
-/*   min-width: 100%; */
-  border-radius: 8px;
-
-/* 	grid-column: col 1 / col 2; */
-/*   grid-row: row 1 / row 2; */
-	margin: 10px;
+.logo {
+  grid-colomn: col 1 / col 2;
+  grid-row: row 1 ;
+  background-color: red;
+  min-width: 170px;
 }
-.header {
-  display: grid;
-  width: 2fr;
-  min-height: 100px;
-/*   min-width: 110px; */
-  grid-column: col 2 / col 4;
-  align-self: start;
-/* 	background-color:red; */
-  }
-.header {
+.img{
   display: flex;
-  padding: 10px;
-  margin: 10px;
+  width: 110%;
+  min-height:130px;
+
+}
+.header {
+    grid-column: col 2 / col 4;
+  grid-row: row 1;
+  background-color: pink;
+  width: 90%;
+  min-height:90px;
+  justify-self:start;
+
 }
 .header li {
-	display: inline;
+ display: inline;
   border: 2px solid #000;
-/*   margin-top: 6px; */
-  margin:3px;
-/*   margin-right: 5px;  */
-  margin-left:10px;
   border-radius:11px;
-  padding:4px;
-/*   paddind-right:10px; */
+  padding: 5px;
+  margin: 4px;
+  background-color: white;
   float: left;
 }
 .header a {
   display: inline;
   text-decoration: none;
-  }
+}
 .main-form {
-  min-height: 220%;
-  min-width: 180px;
-/*   grid-row: row 2 / row 3; */
-/* 	grid-column: col 1; */
+   grid-row: row 2 / row 4;
+  min-width: 80%;
+  min-height: 100%;
   border-radius: 5px;
   background: inherit;
-  overflow: hidden;
-  margin-left: 20px;
-  justify-items: center;
   text-align: center;
   border: 1px solid #000;
-  margin-left:20px;
 }
-.footer{
-grid-row: span 3;
+.footer {
+width: 100%;
+  height: 15px;
+  grid-column: span 4;
+  grid-row: row 5 / row 6;
+/*   background-color: pink; */
+  align-self: end;
+  justify-self:center;
+    text-align: center;
 }
-
-@media (max-width: 510px)
+@media (max-width: 320px)
 {
-.grid-container {
- 	display: grid;
-  grid-template-columns: repeat( 2, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-areas:"logo img logo img"
+  .logo {
+			grid-area: logo;
+		}
+		.header {
+			grid-area: header;
+		}
+		.main-form {
+			grid-area: main-form;
+		}
+		.footer {
+			grid-area: footer;
+		}
+  grid-container: {
+    display: grid;
+  grid-template-areas:"logo logo"
 											"main-form header"
                       "main-form header"
                       "footer footer";
-  grid-auto-rows: minmax(200px, auto);
-  grid-auto-columns: minmax(400px, auto);
-    align-content: start;
-
+/*   grid-auto-rows: minmax(255px, auto); */
+/*   grid-auto-columns: minmax(120px, auto); */
+/*     align-content: center; */
   }
-	.logo img{
-/* 		display: grid; */
-		min-width: 100%;
-	  min-height: 80%;
-	}
-  .header {
-/*   display: grid; */
-  width: 50px;
-  height: 50px;
-/*   min-width: 110px; */
-/*   grid-column: col 2 / col 4; */
-/*   align-self: start; */
-/* 	background-color:red; */
-  }
-   .header li {
-    display:flex;
-    padding:0px;
-    margin:4px;
-    text-align: center;
-    float: none;
-/*     grid-row: row 2 / row 6; */
-  }
-/*   .header {
-    display: flex;
-    margin-top: 0px;
-  } */
+  .logo {
+/* 		display: flex; */
+		width: 100%;
+	  height: 90px;
+/*     margin: 0px; */
+/*   grid-colomn: col 1 / col 2; */
+/*   grid-row: row 1 ; */
+}
   .main-form {
- min-height: 150px;
-/*   min-width: 100%; */
-/*   grid-row: row 2 / row 4; */
-/* 	grid-column: col 1; */
-/* 	background-color:red; */
+    width:100px;
+    height: 100px;
+    grid-column:
   }
-
-  .footer {
-    display:grid;
-    min-width:100%;
-/*     grid-column:span3; */
-/*     grid-row: row 3 / row 4; */
-    text-align: center;
+  .header {
+    width: 50px;
+    height: 100px;
+    grid-row: row 2 / row 4;
     background-color:red;
   }
+  .header li {
+ display: inline;
+  padding: 1px;
+  margin: 1px;
+      margin-top: 0px;
 }
+  .footer {
+    min-width:100%;
+        background-color:red;
+  }
+  }
