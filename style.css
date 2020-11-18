@@ -1,12 +1,10 @@
 .grid-container {
 	display: grid;
-  height:98vh;
+  height:97vh;
 	background-image: url(https://get.pxhere.com/photo/eyewear-sunglasses-glasses-personal-protective-equipment-Transparent-material-close-up-reflection-goggles-vision-care-photography-Material-property-still-life-photography-silver-macro-photography-glass-Eye-glass-accessory-aviator-sunglass-Tints-and-shades-1522943.jpg);
   background-size: cover;
   grid-template-columns: repeat(3, [col] 1fr);
   grid-template-rows: repeat(5, [row] 1fr);
-/*   grid-auto-rows: minmax(10px, auto); */
-/*   grid-auto-colomns: minmax(150px, auto); */
   grid-gap: 5px;
   align-items: center;
   justify-items: center;
@@ -14,17 +12,16 @@
 .logo {
   grid-colomn: col 1 / col 2;
   grid-row: row 1 ;
-  background-color: red;
   min-width: 170px;
 }
 .img{
   display: flex;
   width: 110%;
-  min-height:120px;
+  min-height:110px;
 
 }
 .header {
-    grid-column: col 2 / col 4;
+  grid-column: col 2 / col 4;
   grid-row: row 1;
   width: 90%;
   height: 100%;
@@ -32,7 +29,7 @@
   justify-self:center;
 }
 .header li {
- display: inline;
+  display: inline;
   border: 2px solid #000;
   border-radius:11px;
   padding: 4px;
@@ -45,7 +42,7 @@
   text-decoration: none;
 }
 .main-form {
-   grid-row: row 2 / row 4;
+  grid-row: row 2 / row 4;
   min-width: 80%;
   min-height: 80%;
   border-radius: 5px;
@@ -60,12 +57,12 @@
 .footer {
   grid-column: col 1 / col 4;
   grid-row: row 4 / row 6;
-   justify-self:center;
+  justify-self:center;
   align-self:end;
 }
 .brand li {
   display: inline;
-  margin-left: 1% ;
+  margin-left: 2.5% ;
 }
 .brand img {
   display: inline;
@@ -76,7 +73,7 @@
 #all-rights {
     text-align: center;
 }
-@media (max-width: 355px)
+@media (max-width: 356px)
 {
   .logo {
 			grid-area: logo;
@@ -90,41 +87,40 @@
 		.footer {
 			grid-area: footer;
 		}
-  grid-container {
+  .grid-container {
     display: grid;
-  grid-template-areas:"logo logo"
+    grid-template-columns: 150px 150px;
+    grid-template-rows: auto;
+  grid-template-areas:'logo logo'
 											"main-form header"
-                      "main-form header"
+                      " . header"
                       "footer footer";
+    grid-auto-rows: minmax(100px, auto);
   }
-  .logo {
-/*  width: 2fr; */
-/* 	  height: 100px; */
-/*     margin: 0px; */
-/*   grid-colomn: col 1 / col 2;  */
-   grid-row: row 1 ;
-/*     align-self: center; */
-}
-  .main-form {
-
-/*     width:100px;
-    height: 100px;
-    grid-column: */
+  .logo img {
+    height:100px;
+    padding-bottom:20px;
+    padding-top:5px;
   }
   .header {
-/*     width: 50px;
-    height: 100px;
-    grid-row: row 2 / row 4;
-    background-color:red; */
-  }
-  .header li {
-/*  display: inline;
-  padding: 1px;
-  margin: 1px;
-      margin-top: 0px; */
+  width: 100%;
+  height: 100%;
 }
-  .footer {
-/*     min-width:100%;
-        background-color:red; */
-  }
+.header li {
+  padding: 4px;
+  margin: 2px;
+  background-color: pink;
+  border: 1px solid #000;
+  border-radius:8px;
+}
+.main-form {
+  align-self:center;
+  justify-self:start;
+  padding-bottom:25px;
+}
+.brand img {
+  display: inline;
+  min-width:50px;
+  padding-bottom: 10px;
+}
   }
